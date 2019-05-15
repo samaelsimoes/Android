@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView(R.layout.activity_main);
 
-        view = findViewById(R.id.main);
-        view.setBackgroundColor(getResources().getColor(android.R.color.black));
-
         progressBarCircle();
     }
 
