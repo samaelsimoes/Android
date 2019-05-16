@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@android:color/black"
+=======
+>>>>>>> f629fcbfe7fc13ecdd070f6ab69027442587fd1a
     tools:context=".Bastidores">
 
     <ScrollView
