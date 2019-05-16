@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 timer.cancel();
-                Intent intent = new Intent(MainActivity.this, Bastidores.class );
+                Intent intent = new Intent(MainActivity.this, BastidoresActivity.class );
                 startActivity( intent );
                 finish();
             }
-        },5000);
+        },4000);
     }
 }
