@@ -3,18 +3,18 @@ package com.example.starwars;
 import java.io.Serializable;
 import java.util.List;
 
-public class CharacterRepository implements Serializable {
-    private List<Character> characters;
+public class PersonagemRepository implements Serializable {
+    private List<Character> getPersonagens;
 
     public Character getCharacter(Integer id){
-        return this.characters.get(id);
+        return this.getPersonagens.get(id);
     }
 
     public List<Character> getCharacters() {
-        return this.characters;
+        return this.getPersonagens;
     }
 
     public void setCharacters(List<Character> characters) {
-        this.characters = characters;
+        this.getPersonagens = characters;
     }
 }

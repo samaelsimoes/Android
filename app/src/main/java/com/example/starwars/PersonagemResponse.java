@@ -2,13 +2,13 @@ package com.example.starwars;
 
 import java.util.List;
 
-public class CharacterResponse {
+public class PersonagemResponse {
     private int count;
     private String next;
     private String previous;
     private List<Character> results;
 
-    public CharacterResponse(int count, String next, String previous, List<Character> results) {
+    public PersonagemResponse(int count, String next, String previous, List<Character> results) {
         this.count = count;
         this.next = next;
         this.previous = previous;

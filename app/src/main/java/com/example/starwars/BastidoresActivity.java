@@ -17,24 +17,24 @@ import retrofit2.Response;
 
 public class BastidoresActivity extends AppCompatActivity {
 
-    ListView    listViewTodos;
+    ListView    listViewPersonagens;
     ProgressBar progressBar;
-    Button buttonCharacters;
+    Button      buttonPersonagem;
 
     ApiInterface        apiInterface;
-    CharacterRepository characterRepository;
+    PersonagemRepository personagemRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_bastidores );
 
-        apiInterface        = ApiClient.getClient().create(ApiInterface.class);
-        buttonCharacters    = findViewById(R.id.buttonPersonagens);
-        characterRepository = new CharacterRepository();
-        progressBar         = findViewById(R.id.progressBar);
+        apiInterface         = ApiClient.getClient().create(ApiInterface.class);
+        buttonPersonagem     = findViewById(R.id.buttonPersonagens);
+        personagemRepository = new PersonagemRepository();
+        progressBar          = findViewById(R.id.progressBar);
 
-        buttonCharacters.setVisibility(View.INVISIBLE);
+        buttonPersonagem.setVisibility(View.INVISIBLE);
 
     }
 
@@ -42,20 +42,20 @@ public class BastidoresActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        GetPersonagemAsyncTask task = new GetPersonagemAsyncTask();
+        GetPersonAsyncTask task = new GetPersonAsyncTask();
         task.execute();
 
-        buttonCharacters.setOnClickListener(new View.OnClickListener() {
+        buttonPersonagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("StarCharacters", characterRepository.getCharacters().toString());
+                Log.e("StarCharacters", personagemRepository.getCharacters().toString());
                 Intent intent = new Intent(
                         getApplicationContext(),
                         ViewModels.class
                 );
 
                 intent.putExtra("type", "characters");
-                intent.putExtra("characters", characterRepository);
+                intent.putExtra("characters", personagemRepository );
 
                 startActivity(intent);
             }
@@ -63,7 +63,7 @@ public class BastidoresActivity extends AppCompatActivity {
 
     }
 
-    class GetPersonagemAsyncTask extends AsyncTask<String, Integer, String> {
+    class GetPersonAsyncTask extends AsyncTask<String, Integer, String> {
 
         @Override
         protected void onPreExecute() {
@@ -92,21 +92,21 @@ public class BastidoresActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            getCharacters(listViewTodos);
+            getCharacters(listViewPersonagens);
             return null;
         }
     }
 
     public void getCharacters(View view){
-        Call<CharacterResponse> call = apiInterface.getCharacters();
-        call.enqueue(new Callback<CharacterResponse>() {
+        Call<PersonagemResponse> call = apiInterface.getCharacters();
+        call.enqueue(new Callback<PersonagemResponse>() {
             @Override
-            public void onResponse(Call<CharacterResponse> call, Response<CharacterResponse> response) {
-                characterRepository.setCharacters(response.body().getResults());
+            public void onResponse(Call<PersonagemResponse> call, Response<PersonagemResponse> response) {
+                personagemRepository.setCharacters(response.body().getResults());
             }
 
             @Override
-            public void onFailure(Call<CharacterResponse> call, Throwable t) {
+            public void onFailure(Call<PersonagemResponse> call, Throwable t) {
                 Toast.makeText(getApplicationContext(),
                         "Ocorreu uma falha ao buscar os personagens",
                         Toast.LENGTH_LONG

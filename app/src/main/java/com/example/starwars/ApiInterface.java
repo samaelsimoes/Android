@@ -6,5 +6,5 @@ import retrofit2.http.GET;
 public interface ApiInterface {
 
     @GET("people/")
-    abstract Call<CharacterResponse> getCharacters();
+    abstract Call<PersonagemResponse> getCharacters();
 }

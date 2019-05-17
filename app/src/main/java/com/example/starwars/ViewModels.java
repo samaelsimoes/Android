@@ -15,7 +15,7 @@ public class ViewModels extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     ApiInterface        apiInterface;
     ListView listView;
-    CharacterRepository characterRepository;
+    PersonagemRepository personagemRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +31,20 @@ public class ViewModels extends AppCompatActivity {
         Log.e(TAG, type);
 
         if(type.equals("characters")){
-            characterRepository = (CharacterRepository) data.getSerializable("characters");
+            personagemRepository = (PersonagemRepository) data.getSerializable("characters");
 
             ArrayAdapter<Character> adapter = new ArrayAdapter<>(
                     getApplicationContext(),
                     android.R.layout.simple_list_item_1,
                     android.R.id.text1,
-                    characterRepository.getCharacters()
+                    personagemRepository.getCharacters()
             );
 
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Character character = characterRepository.getCharacter(position);
+                    Character character = personagemRepository.getCharacter(position);
 
                     Intent characterIntent = new Intent(
                             getApplicationContext(),
