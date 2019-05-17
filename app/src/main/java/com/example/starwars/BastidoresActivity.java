@@ -24,7 +24,7 @@ public class BastidoresActivity extends AppCompatActivity {
         btnPersonagens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( BastidoresActivity.this, PersonagensActivity.class));
+                startActivity(new Intent( BastidoresActivity.this, PersonagemActivity.class));
             }
         });
     }
