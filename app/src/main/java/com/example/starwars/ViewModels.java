@@ -9,13 +9,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.List;
+
 public class ViewModels extends AppCompatActivity {
 
 
     private static final String TAG = "MainActivity";
     ApiInterface        apiInterface;
     ListView listView;
-    PersonagemRepository personagemRepository;
+    List<Personagem> personagemRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,33 +30,36 @@ public class ViewModels extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         String type = data.getString("type");
 
+        personagemRepository = (List<Personagem>) data.getSerializable("characters");
+
         Log.e(TAG, type);
+        Log.e( TAG, String.valueOf(personagemRepository));
 
         if(type.equals("characters")){
-            personagemRepository = (PersonagemRepository) data.getSerializable("characters");
+            personagemRepository = (List<Personagem>) data.getSerializable("characters");
 
-            ArrayAdapter<Character> adapter = new ArrayAdapter<>(
+            ArrayAdapter<Personagem> adapter = new ArrayAdapter<>(
                     getApplicationContext(),
                     android.R.layout.simple_list_item_1,
                     android.R.id.text1,
-                    personagemRepository.getCharacters()
+                    personagemRepository
             );
 
-            listView.setAdapter(adapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listView.setAdapter(adapter);//new ArrayAdapter<String>(this,R.layout.drawer_list_item, mServices)
+            listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Character character = personagemRepository.getCharacter(position);
+                    Personagem personagem = personagemRepository.get(position);
 
-                    Intent characterIntent = new Intent(
+                    Intent personagemIntent = new Intent(
                             getApplicationContext(),
-                            CharacterDetails.class
+                            PersonagemDetails.class
                     );
 
-                    characterIntent.putExtra("character", character);
-                    startActivity(characterIntent);
+                    personagemIntent.putExtra("character", personagem);
+                    startActivity(personagemIntent);
                 }
-            });
+            } );
         }
     }
 }

@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ViewModels"></activity>
-        <activity android:name=".CharacterDetails" />
-        <activity android:name=".CharacterDetail" />
+        <activity android:name=".PersonagemDetails" />
         <activity android:name=".BastidoresActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

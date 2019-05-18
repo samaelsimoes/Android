@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.util.List;
 
 public class PersonagemRepository implements Serializable {
-    private List<Character> getPersonagens;
+    private List<Personagem> personagens;
 
-    public Character getCharacter(Integer id){
-        return this.getPersonagens.get(id);
+    public Personagem getPersonagem(Integer id){
+        return this.personagens.get(id);
     }
 
-    public List<Character> getCharacters() {
-        return this.getPersonagens;
+    public List<Personagem> getPersonagens() {
+        return this.personagens;
     }
 
-    public void setCharacters(List<Character> characters) {
-        this.getPersonagens = characters;
+    public void setPersonagens(List<Personagem> personagens) {
+        this.personagens = personagens;
     }
 }

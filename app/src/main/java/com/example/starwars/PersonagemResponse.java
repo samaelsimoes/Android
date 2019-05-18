@@ -6,9 +6,14 @@ public class PersonagemResponse {
     private int count;
     private String next;
     private String previous;
-    private List<Character> results;
+    private List<Personagem> results;
 
-    public PersonagemResponse(int count, String next, String previous, List<Character> results) {
+    @Override
+    public String toString() {
+        return "count: " + count + '\n' + "next: " + next + "'\nprevious" + previous + "\nresults" + results;
+    }
+
+    public PersonagemResponse(int count, String next, String previous, List<Personagem> results) {
         this.count = count;
         this.next = next;
         this.previous = previous;
@@ -39,11 +44,11 @@ public class PersonagemResponse {
         this.previous = previous;
     }
 
-    public List<Character> getResults() {
+    public List<Personagem> getResults() {
         return results;
     }
 
-    public void setResults(List<Character> results) {
+    public void setResults(List<Personagem> results) {
         this.results = results;
     }
 }
