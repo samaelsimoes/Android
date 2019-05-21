@@ -10,12 +10,12 @@ import android.widget.ListView;
 
 import java.util.List;
 
-public class ViewPlanetasModels extends AppCompatActivity {
+public class PersonagemActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     ApiInterface        apiInterface;
     ListView listView;
-    List<Planeta> planetasRepository;
+    List<Personagem> personagemRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,30 +28,30 @@ public class ViewPlanetasModels extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
         String type = data.getString("type");
 
-        planetasRepository = (List<Planeta>) data.getSerializable("planetas");
+        personagemRepository = (List<Personagem>) data.getSerializable("personagens");
 
-        if (type.equals("planetas")) {
-            planetasRepository = (List<Planeta>) data.getSerializable("planetas");
+        if(type.equals("personagens")){
+            personagemRepository = (List<Personagem>) data.getSerializable("personagens");
 
-            ArrayAdapter<Planeta> adapter = new ArrayAdapter<>(
+            ArrayAdapter<Personagem> adapter = new ArrayAdapter<>(
                     getApplicationContext(),
                     android.R.layout.simple_list_item_1,
                     android.R.id.text1,
-                    planetasRepository
+                    personagemRepository
             );
 
             listView.setAdapter(adapter);//new ArrayAdapter<String>(this,R.layout.drawer_list_item, mServices)
             listView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Planeta planeta= planetasRepository.get(position);
+                    Personagem personagem = personagemRepository.get(position);
 
-                    Intent planetaIntent = new Intent(
+                    Intent personagemIntent = new Intent(
                             getApplicationContext(),
-                            PlanetasDetails.class
+                            PersonagemDetails.class
                     );
-                    planetaIntent.putExtra("character", planeta);
-                    startActivity(planetaIntent);
+                    personagemIntent.putExtra("personagem", personagem);
+                    startActivity(personagemIntent);
                 }
             } );
         }

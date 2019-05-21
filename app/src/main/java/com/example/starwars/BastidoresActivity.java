@@ -4,17 +4,14 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BastidoresActivity extends AppCompatActivity {
@@ -83,7 +80,7 @@ public class BastidoresActivity extends AppCompatActivity {
 
             Intent intent = new Intent(
                     getApplicationContext(),
-                    ViewModels.class
+                    PlanetaActivity.class
             );
 
             intent.putExtra("type", "planetas");
@@ -106,6 +103,7 @@ public class BastidoresActivity extends AppCompatActivity {
         protected List<Planeta> doInBackground(String... strings) {
             Call<PlanetasResponse> call         = apiInterface.getPlanetas();
             Response<PlanetasResponse> response = null;
+
             try {
                 response = call.execute();
             } catch (IOException e) {
@@ -130,11 +128,11 @@ public class BastidoresActivity extends AppCompatActivity {
 
             Intent intent = new Intent(
                     getApplicationContext(),
-                    ViewModels.class
+                    PersonagemActivity.class
             );
 
-            intent.putExtra("type", "characters");
-            intent.putExtra("characters", (Serializable) result );
+            intent.putExtra("type", "personagens");
+            intent.putExtra("personagens", (Serializable) result );
 
             startActivity(intent);
         }

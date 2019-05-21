@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Planeta implements Serializable {
 
-    private int orbital_period;
-    private int surface_water;
-    private int population;
+    private String orbital_period;
+    private String surface_water;
+    private String population;
 
-    private int diameter;
-    private int rotation_period;
+    private String diameter;
+    private String rotation_period;
 
     private List<String> residents;
     private List<String> films;
@@ -23,7 +23,8 @@ public class Planeta implements Serializable {
     private String gravity;
     private String terrain;
 
-    public Planeta(int orbital_period, int surface_water, int population, int diameter, int rotation_period, List<String> residents, List<String> films, String name, String created, String edited, String url, String climate, String gravity, String terrain) {
+
+    public Planeta(String orbital_period, String surface_water, String population, String diameter, String rotation_period, List<String> residents, List<String> films, String name, String created, String edited, String url, String climate, String gravity, String terrain) {
         this.orbital_period = orbital_period;
         this.surface_water = surface_water;
         this.population = population;
@@ -40,43 +41,43 @@ public class Planeta implements Serializable {
         this.terrain = terrain;
     }
 
-    public int getOrbital_period() {
+    public String getOrbital_period() {
         return orbital_period;
     }
 
-    public void setOrbital_period(int orbital_period) {
+    public void setOrbital_period(String orbital_period) {
         this.orbital_period = orbital_period;
     }
 
-    public int getSurface_water() {
+    public String getSurface_water() {
         return surface_water;
     }
 
-    public void setSurface_water(int surface_water) {
+    public void setSurface_water(String surface_water) {
         this.surface_water = surface_water;
     }
 
-    public int getPopulation() {
+    public String getPopulation() {
         return population;
     }
 
-    public void setPopulation(int population) {
+    public void setPopulation(String population) {
         this.population = population;
     }
 
-    public int getDiameter() {
+    public String getDiameter() {
         return diameter;
     }
 
-    public void setDiameter(int diameter) {
+    public void setDiameter(String diameter) {
         this.diameter = diameter;
     }
 
-    public int getRotation_period() {
+    public String getRotation_period() {
         return rotation_period;
     }
 
-    public void setRotation_period(int rotation_period) {
+    public void setRotation_period(String rotation_period) {
         this.rotation_period = rotation_period;
     }
 

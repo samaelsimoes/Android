@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PlanetasDetails"></activity>
-        <activity android:name=".ViewPlanetasModels" />
-        <activity android:name=".ViewModels" />
+        <activity android:name=".PlanetaActivity" />
+        <activity android:name=".PersonagemActivity" />
         <activity android:name=".PersonagemDetails" />
         <activity android:name=".BastidoresActivity" />
         <activity android:name=".MainActivity">
