@@ -7,4 +7,7 @@ public interface ApiInterface {
 
     @GET("people/")
     abstract Call<PersonagemResponse> getPersonagens();
+
+    @GET("planets/")
+    abstract Call<PlanetasResponse> getPlanetas();
 }

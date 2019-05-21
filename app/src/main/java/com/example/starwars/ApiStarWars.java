@@ -3,7 +3,7 @@ package com.example.starwars;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class ApiStarWars {
 
     private static final String BASE_URL = "https://swapi.co/api/";
     private static Retrofit retro        = null;
