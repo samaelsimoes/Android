@@ -11,10 +11,10 @@ public class PersonagemDetails extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_personagem_details );
         TextView name         = findViewById(R.id.textViewName);
-        TextView height       = findViewById(R.id.textViewHeight);
-        TextView mass         = findViewById(R.id.textViewMass);
-        TextView hair_color   = findViewById(R.id.textViewHairColor);
-        TextView skin_color   = findViewById(R.id.textViewSkinColor);
+        TextView height       = findViewById(R.id.textViewModel );
+        TextView mass         = findViewById(R.id.textViewManufacturer );
+        TextView hair_color   = findViewById(R.id.textViewCost_in_credits );
+        TextView skin_color   = findViewById(R.id.textViewLength );
         TextView eye_color    = findViewById(R.id.textViewEyeColor);
         TextView birth_year   = findViewById(R.id.textViewBirthYear);
         TextView gender       = findViewById(R.id.textViewGender);

@@ -17,8 +17,8 @@ public class PlanetasDetails extends AppCompatActivity {
         TextView climate    = findViewById( R.id.textViewClimate );
         TextView surface    = findViewById( R.id.textViewSurfaceWater );
         TextView population = findViewById( R.id.textViewPopulation );
-        TextView created    = findViewById( R.id.textViewCreated );
-        TextView edited     = findViewById( R.id.textViewEdited );
+        TextView created    = findViewById( R.id.textViewUrl );
+        TextView edited     = findViewById( R.id.textViewUrl );
         TextView url        = findViewById( R.id.textViewUrl);
 
         Bundle data = getIntent().getExtras();

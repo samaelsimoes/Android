@@ -10,4 +10,7 @@ public interface ApiInterface {
 
     @GET("planets/")
     abstract Call<PlanetasResponse> getPlanetas();
+
+    @GET("vehicles/")
+    abstract Call<VeiculoResponse> getVeiculos();
 }

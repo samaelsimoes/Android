@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlanetasDetails"></activity>
+        <activity android:name=".VeiculoDetails"></activity>
+        <activity android:name=".VeiculoActivity" />
+        <activity android:name=".PlanetasDetails" />
         <activity android:name=".PlanetaActivity" />
         <activity android:name=".PersonagemActivity" />
         <activity android:name=".PersonagemDetails" />

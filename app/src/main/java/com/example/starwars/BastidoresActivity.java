@@ -65,7 +65,62 @@ public class BastidoresActivity extends AppCompatActivity {
                 GetPlanetasAsyncTask taskPlanetas = new GetPlanetasAsyncTask();
                 taskPlanetas.execute();
             }
-        } );
+        });
+
+        buttonVeiculos.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public  void onClick(View view) {
+                GetVeiculosAsyncTask taskVeiculos= new GetVeiculosAsyncTask();
+                taskVeiculos.execute();
+            }
+        });
+    }
+
+    class GetVeiculosAsyncTask extends  AsyncTask<String, Integer, List<Veiculo>> {
+        @Override
+        protected void onPreExecute() {
+            //
+        }
+
+        @Override
+        protected void onPostExecute(List<Veiculo> result) {
+            super.onPostExecute(result);
+
+            Intent intent = new Intent(
+                    getApplicationContext(),
+                    PlanetaActivity.class
+            );
+
+            intent.putExtra("type", "veiculos");
+            intent.putExtra("veiculos", (Serializable) result );
+
+            startActivity(intent);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+
+        @Override
+            protected List<Veiculo> doInBackground(String... strings) {
+            Call<VeiculoResponse> call         = apiInterface.getVeiculos();
+            Response<VeiculoResponse> response = null;
+
+            try {
+                response = call.execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            VeiculoResponse res = response.body();
+
+            return res.getResults();
+        }
     }
 
     class GetPlanetasAsyncTask extends AsyncTask<String, Integer, List<Planeta>> {

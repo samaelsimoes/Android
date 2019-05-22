@@ -8,13 +8,10 @@ public class Planeta implements Serializable {
     private String orbital_period;
     private String surface_water;
     private String population;
-
     private String diameter;
     private String rotation_period;
-
     private List<String> residents;
     private List<String> films;
-
     private String name;
     private String created;
     private String edited;
@@ -23,22 +20,21 @@ public class Planeta implements Serializable {
     private String gravity;
     private String terrain;
 
-
     public Planeta(String orbital_period, String surface_water, String population, String diameter, String rotation_period, List<String> residents, List<String> films, String name, String created, String edited, String url, String climate, String gravity, String terrain) {
-        this.orbital_period = orbital_period;
-        this.surface_water = surface_water;
-        this.population = population;
-        this.diameter = diameter;
+        this.orbital_period  = orbital_period;
+        this.surface_water   = surface_water;
+        this.population      = population;
+        this.diameter        = diameter;
         this.rotation_period = rotation_period;
-        this.residents = residents;
-        this.films = films;
-        this.name = name;
-        this.created = created;
-        this.edited = edited;
-        this.url = url;
-        this.climate = climate;
-        this.gravity = gravity;
-        this.terrain = terrain;
+        this.residents       = residents;
+        this.films           = films;
+        this.name            = name;
+        this.created         = created;
+        this.edited          = edited;
+        this.url             = url;
+        this.climate         = climate;
+        this.gravity         = gravity;
+        this.terrain         = terrain;
     }
 
     public String getOrbital_period() {

@@ -55,10 +55,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEdited" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewUrl" />
 
     <TextView
-        android:id="@+id/textViewEdited"
+        android:id="@+id/textViewUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCreated" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewUrl" />
 
     <TextView
         android:id="@+id/textViewRotation_period"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewRotation_period" />
 
     <TextView
-        android:id="@+id/textViewCreated"
+        android:id="@+id/textViewUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
